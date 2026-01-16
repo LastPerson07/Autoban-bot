@@ -1,4 +1,4 @@
-# bot.py
+# bot.py (UPDATED - Fix for Render.com / Ephemeral Filesystem)
 import asyncio
 import logging
 from pyrogram import Client
@@ -18,7 +18,8 @@ class GuardianBot(Client):
             api_id=Config.API_ID,
             api_hash=Config.API_HASH,
             bot_token=Config.BOT_TOKEN,
-            plugins=dict(root="plugins")
+            plugins=dict(root="plugins"),
+            in_memory=True  # ← THIS FIXES THE SQLITE ERROR ON RENDER
         )
 
     async def start(self):
