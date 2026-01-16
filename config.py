@@ -1,0 +1,18 @@
+from dotenv import load_dotenv
+import os
+import logging
+
+load_dotenv()  # This loads .env automatically
+
+
+class Config:
+    API_ID = int(os.getenv("API_ID"))
+    API_HASH = os.getenv("API_HASH")
+    BOT_TOKEN = os.getenv("BOT_TOKEN")
+    MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
+    BOT_OWNER_ID = int(os.getenv("BOT_OWNER_ID"))
+
+    INTRO_PHOTO = os.getenv("INTRO_PHOTO", "https://example.com/shield.jpg")
+    WELCOME_STICKER = os.getenv("WELCOME_STICKER")
+
+    LOG_LEVEL = logging.INFO  

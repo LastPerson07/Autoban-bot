@@ -1,0 +1,12 @@
+# .dockerignore (recommended - create in project root)
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+.git
+.gitignore
+Dockerfile
+.dockerignore
+README.md
+*.log
